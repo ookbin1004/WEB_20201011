@@ -3,24 +3,44 @@
 <html>
 	<title>구글 메인화면 예제</title>
 	<head>
+		<meta name = "author" content = "20201011">
+		<meta charset = "utf-8">
+		<meta name = "keywords" content = "computer">
+		<base href = "https://web--ivokm.run.goorm.site/">
+	</head>
+	<body>
 		<p style="text-align:left;"><font size="4em" color="#0080FF">
 			문서제목, 자바스크립트 코드, CSS 스타일 정의, 메타 데이터 정의
 		</font></p>
 		<!--br은 줄바꿈-->
 		<hr> <!--hr은 밑줄-->
 		<br><br><br>
-	</head>
-	<body>
 		<p style="text-align:center">
+			<a href = "index.html" target = "_blank">
 			<img src="img/google_color.png" alt="구글이미지">
+			</a>
 		</p> <!--img 태그는 이미지삽입, scr=경로, 이미지가 깨지면 alt 출력-->
 		<br> <!--br은 줄바꿈-->
 		<p style="text-align:center">
 			검색 : <input type="text" name="search" size="55" value="">
-			<butten type="butten" onclick="alert('검색을 수행합니다.')">검색
-			</butten>
-			<br>
+			<button type="button" onclick="alert('검색을 수행합니다.')">검색
+			</button>
+			<br><br>
 		</p>
+		<table style="margin-left : auto; margin-right : auto;" border = "1" width = "500">
+			<!--테이블을 정리합니다-->
+			<caption> 인기 검색어 </caption> <!--테이블 제목-->
+			<tbody>
+				<tr><td bgcolor = "pink">가</td><td bgcolor = "skyblue">나</td><td>다</td><td>라</td><td>마</td></tr><!--1행-->
+				<tr bgcolor = "pink"><td colspan = "2">바</td><td>사</td><td>아</td><td rowspan = "2">자</td></tr><!--2행-->
+				<tr bgcolor = "skyblue"><td>차</td><td>카</td><td>타</td><td>파</td></tr><!--3행-->
+				<tr bgcolor = "#ffffff"><td colspan = "5"><b>외부 사이트 링크</b></td></tr>
+				<tr><td colspan = "2" bgcolor = "#66ff66"><a href = "https://www.naver.com/" target = "_blank">네이버</a></td>
+					<td colspan = "1" bgcolor = "#3399ff"><a href = "https://www.daum.net/" target = "_blank">다음</a></td>
+					<td colspan = "2" bgcolor = "#ff704d"><a href = "https://www.nate.com/" target = "_blank">네이트</a></td>
+				</tr>
+			</tbody>
+		</table>
 		<br><br><br><br><br><br><br><br><br><br> <!--간격을 위해 여러번 줄바꿈-->
 		<hr> <!--hr은 밑줄-->
 		<p style="text-align:right;"><font size="5em" color="#8258FA">
