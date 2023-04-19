@@ -16,6 +16,7 @@
 		<script type="text/javascript" src="js/data_type.js" defer></script>
 		<script type="text/javascript" src="js/pop_up.js" defer></script>
 		<script type="text/javascript" src="js/hover.js" defer></script>
+		<script type="text/javascript" src="js/array_test.js" defer></script>
 	</head>
 	<body onload = "pop_up();">
 		<nav class="navbar navbar-expand-lg bg-light">
@@ -64,12 +65,11 @@
 			</button>
 			<br><br>
 		</p>-->
-		<form action = "https://www.google.co.kr/search" method="GET" target="_blank">
-			<div class = "d-flex justify-content-center">
+		<form id="form_main" action="https://www.google.co.kr/search" method="GET" target="_blank" onsubmit="return false">			<div class = "d-flex justify-content-center">
 				<mx-auto>
 					<input name="query" type="text" class="form-control-lg" placeholder="검색어 입력" aria-label="search" aria-describedby="search_btn" id="search_txt">
 				</mx-auto>
-				<button class="btn btn-outline-info" type = "submit" id="search btn">
+				<button class="btn btn-outline-info" type = "submit" id="search_btn">
 					검색
 				</button>
 			</div>
