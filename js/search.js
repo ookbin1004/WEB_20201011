@@ -11,7 +11,8 @@ function search_message()
 			alert("검색어가 비어있습니다. 입력해주세요.");
 		}
 		else if(filter_words.includes(search_str.value)){
-			alert("검색어에 제한된 단어가 포함되어 있습니다.");
+			let filtered_words = filter_words.find((word) => search_str.value.includes(word));
+			alert(`${filtered_words}는 적절하지 않습니다.`);
 		}
 		else if(search_array.length >= Max_search_count){
 			alert("검색을 수행합니다.");
