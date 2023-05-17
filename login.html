@@ -12,8 +12,9 @@
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="js/login.js" defer></script>
+		<script src ="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
 	</head>
-	<body class = "text-center">
+	<body class = "text-center" onload = "init();">
 		<br><br><br>
 		<div class = "mx-auto" style="width : 450px">
 			<a href = "index.html" target = "_blank">
@@ -35,7 +36,7 @@
 
         <div class="checkbox mb-3">
           <label>
-            <input type="checkbox" value="remember-me"> Remember me
+            <input type="checkbox" value="remember-me" id = "idSaveCheck"> Remember me
           </label>
         </div>
         <button class="w-100 btn btn-lg btn-primary" onclick = "login()" type = "button">Sign in</button>
