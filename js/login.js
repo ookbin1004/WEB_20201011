@@ -1,3 +1,14 @@
+function addjavascript(jsname) {
+	var th = document.getElementsByClassName('head')[0];
+	var s = document.createElement('script');
+	s.setAttribute('type', 'text/javascript');
+	s.setAttribute('src', 'jsname');
+	th.appendChild(s);
+}
+addjavascript('/js/security.js');
+addjavascript('/js/session.js');
+addjavascript('/js/cookie.js');
+
 function login(){
 	let form = document.querySelector("#form_main");
 	let id = document.querySelector("#floatingInput");
@@ -105,7 +116,7 @@ function session_set(){
 
 function session_get(){
 	if (sessionStorage){
-		return sessionStorage.getItem("Session_Storage_test");
+		return sessionStorage.getItem("Session_Storage_encrypted");
 	}
 	else{
 		alert("세션 스토리지 지원 X");
