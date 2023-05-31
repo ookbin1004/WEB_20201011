@@ -8,7 +8,7 @@ cars[0] = "Jaab"; // 0번 인덱스 값 수정
 let car = cars[2]; // 변수에 배열 값 초기화
 cars[1] = Date.now(); // 값에 객체 삽입 가능
 
-document.getElementById("arrayID").innerHTML = cars;
+//document.getElementById("arrayID").innerHTML = cars;
 
 console.log(cars); // 배열 출력
 console.log(typeof cars); // 배열 타입 : 객체
