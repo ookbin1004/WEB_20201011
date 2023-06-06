@@ -1,13 +1,13 @@
 function addjavascript(jsname) {
-	var th = document.getElementsByClassName('head')[0];
+	var th = document.getElementsByTagName('head')[0];
 	var s = document.createElement('script');
 	s.setAttribute('type', 'text/javascript');
-	s.setAttribute('src', 'jsname');
+	s.setAttribute('src', jsname);
 	th.appendChild(s);
 }
-addjavascript('/js/security.js');
-addjavascript('/js/session.js');
-addjavascript('/js/cookie.js');
+//addjavascript('js/security.js');
+addjavascript('js/session.js');
+//addjavascript('js/cookie.js');
 
 function login(){
 	let form = document.querySelector("#form_main");
@@ -173,4 +173,28 @@ function decrypt_text(){
 	const eb = session_get();
 	const b = this.decodeByAES256(rk, eb);
 	console.log(b);
+}
+
+function login_check() {
+  const id = document.querySelector("#floatingInput");
+  const password = document.querySelector("#floatingPassword");
+  const check = document.querySelector("#idSaveCheck");
+
+  const emailRegex = /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
+  const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{10,}$/;
+
+  if(id.value.length === 0 || password.value.length === 0){
+	alert("아이디와 비밀번호를 모두 입력해주세요.");
+	return;
+  }
+  else if (!emailRegex.test(id.value) || !passwordRegex.test(password.value)) {
+    alert("아이디와 비밀번호 형식을 확인해주세요.");
+    return;
+  }
+
+  const form = document.querySelector("#form_main");
+  form.action = "../Index_login.html";
+  form.method = "get";
+  session_set();
+  form.submit();
 }

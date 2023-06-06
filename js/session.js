@@ -20,11 +20,11 @@ function session_set(){
 }
 
 function session_join_set(){
-	let f_name = document.querySelector("#firstNam").value;
+	let f_name = document.querySelector("#firstName").value;
 	let l_name = document.querySelector("#lastName").value;
 	let b_day = document.querySelector("#birthdayDate").value;
 	let gender = document.querySelector("#inlineRadioOptions");
-	let email = document.querySelector("#emailAddeess").value;
+	let email = document.querySelector("#emailAddress").value;
 	let p_number = document.querySelector("#phoneNumber").value;
 	let class_check = document.querySelector(".select form-control-lg");
 	let random = new Date();
