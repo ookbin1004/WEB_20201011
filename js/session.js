@@ -1,3 +1,4 @@
+
 function session_set(){
 	let id = document.querySelector('#floatingInput');
 	let password = document.querySelector('#floatingPassword');
@@ -19,6 +20,15 @@ function session_set(){
 	}
 }
 
+function decrypt_text(text) {
+  const k = "key";
+  const rk = k.padEnd(32, " ");
+  const eb = sessionStorage.getItem("Session_Storage_test");
+  const b = decodeByAES256(rk, eb);
+  console.log(b);
+  return b;
+}
+
 function session_join_set(){
 	let f_name = document.querySelector("#firstName").value;
 	let l_name = document.querySelector("#lastName").value;
@@ -35,9 +45,24 @@ function session_join_set(){
 	
 	if (sessionStorage){
 		const objString = JSON.stringify(newSignUp);
-		let en_text = encrypt_text(objString);
-		sessionStorage.setItem("Session_Storage_object", objString);
-		sessionStorage.setItem("Session_Storage_encrypted", en_text);
+  		sessionStorage.setItem("Session_Storage_object", objString);
+ 		sessionStorage.setItem("Session_Storage_encrypted", objString);
+	}
+	else{
+		alert("세션 스토리지 지원 X");
+	}
+}
+
+function session_join_get() {
+	if (sessionStorage){
+		let objString = sessionStorage.getItem("Session_Storage_object");
+		if (objString){
+			let obj = JSON.parse(objString);
+			console.log(obj);
+		}
+		else{
+			console.log("세션 데이터가 존재하지 않습니다.");
+		}
 	}
 	else{
 		alert("세션 스토리지 지원 X");
